@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #d5ffc4, #daffc0);
+    color: #333;
+}
+/*left*/
+.sidebar{
+    width: 210px;
+    height: 100vh;
+    background: linear-gradient(180deg, #006303, #005203);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
+    text-align: center;
+}
+.sidebar h2{
+    color: white;
+    margin-bottom: 50px;
+}
+.sidebar a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 16px;
+    font-size: 16px;
+}
+.sidebar a:hover{
+    background: rgba(255, 255, 255, 0.25);
+}
+/*main*/
+.main-content{
+    margin-left: 210px;
+    padding: 60px;
+    min-height: 100vh;
+}
+/*card*/
+.card{
+    max-width: 850px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 45px;
+    border-radius: 150px;
+    box-shadow: 0 10px 25px rgba(45, 0, 0, 0.15);
+}
+.profile-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+h1{
+    color: #01980d;
+    font-size: 42px;
+    margin-bottom: 10px;    
+}
+h3{
+    color: #006605;
+    font-size: 24px;
+}
+p{
+    line-height: 1.8;
+    font-size: 16px;
+}
+.profile-img{
+    width: 250px;
+    border-radius: 30px;
+    animation: i 5.2s ease-out;
+}
+@keyframes i {
+    0%{
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0;
+    }
+    20%{
+        transform: translateY(-300px) rotate(80deg);
+        opacity: 0.2;
+    }
+    40%{
+        transform: translateY(-100px) rotate(170deg);
+        opacity: 0.4;
+    }
+    60%{
+        transform: translateY(-600px) rotate(220deg);
+        opacity: 0.6;
+    }
+    80%{
+        transform: translateY(20px) rotate(300deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0) rotate(360deg);
+    }
+    }
+/*reserch*/
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+.image-grid img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+.image-grid img:hover{
+    opacity: 0.7;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+/* テーブル */
+table {
+  width: 200%;             /* 横幅いっぱいに広げる */
+  max-width: 650px;        /* 広がりすぎないための制限 */
+  margin: 30px auto;       /* 中央に配置する */
+  border-collapse: collapse;
+  border: 2px solid #000000; /* ★ 表の「一番外側の枠線」を黒にする */
+}
+td {
+  width: 50%;              /* 2列なので50%ずつに分ける */
+  padding: 10px;
+  border: 2px solid #000000; /* ★ 縦と横の仕切り線を黒にする */
+  background-color: #ffffff; /* 必要ならマスの背景を白にする（不要なら消してOK） */
+  text-align: center;
+}
+td img {
+  width: 100% !important;        
+  height: auto;            /* ★ 縦横比を崩さず、自動で綺麗な比率にする */
+  aspect-ratio: 16 / 10;   /* ★ 画像の縦横比を固定（横長にする設定） */
+  object-fit: cover;       /* これで画像が引き伸ばされずに綺麗に収まります */
+  border-radius: 20px;     /* 画像の角を丸くする（元のデザインに合わせる） */
+  display: block;
+}
+/*contact form*/
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+input, textarea{
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 25px;
+    background: #bcffd1;
+    font-size: 15px;
+}
+button{
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background: #00c711;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover{
+    background: #28da00;
+}
+footer{
+    text-align: center;
+    margin-top: 40px;
+    color: #555;
+}
+.loding-line{
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 15px;
+    background-color: rgb(154, 252, 154);
+    animation: f 2.5s forwards;
+}
+@keyframes f{
+    0%,80%{opacity: 1;}
+    100%{opacity: 0; visibility: hidden;}
+}
+.loding-line::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(81, 255, 0), rgb(0, 179, 18), rgb(0, 85, 0));
+    animation: fill 2s forwards;
+}
+@keyframes fill{
+    to {width: 100%;}
+}
+.sidebar, .main-content{
+    animation: s 2.5s;
+}
+@keyframes s{
+    0%,80%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.circle-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.circle:hover{
+    transform: scale(1.1);
+}
+.facebook{background-color: blue;}
+.insta{background-color: pink;}
+.line{background-color: greenyellow;}
+.x{background-color: black;}
+.youtube{background-color: red;}
+.circle img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
